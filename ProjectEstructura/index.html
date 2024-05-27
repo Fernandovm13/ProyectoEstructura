@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Contactos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Gestión de Contactos</h1>
+        <div id="form">
+            <input type="text" id="name" placeholder="Nombre">
+            <input type="text" id="lastName" placeholder="Apellido">
+            <input type="text" id="phone" placeholder="Número de Teléfono">
+            <button id="addContactButton">Agregar Contacto</button>
+        </div>
+        <div id="search">
+            <input type="text" id="searchName" placeholder="Buscar por Nombre">
+            <button id="searchContactButton">Buscar</button>
+        </div>
+        <div id="results">
+            <h2>Resultados</h2>
+            <div id="contactos"></div>
+        </div>
+        <div id="actions">
+            <button id="firstContactButton">Primer Contacto</button>
+            <button id="lastContactButton">Último Contacto</button>
+            <button id="printContactsButton">Imprimir Todos los Contactos</button>
+        </div>
+    </div>
+    <script src="models/modelo.js"></script>
+    <script src="controllers/controlador.js"></script>
+    <script src="views/vista.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('addContactButton').addEventListener('click', function() {
+            controlador.agregarContacto();
+        });
+
+        document.getElementById('searchContactButton').addEventListener('click', function() {
+            controlador.buscarContacto();
+        });
+    </script>
+</body>
+</html>
